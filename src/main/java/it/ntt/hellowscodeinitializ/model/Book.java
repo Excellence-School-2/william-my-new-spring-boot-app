@@ -14,7 +14,7 @@ public class Book {
     private Long id;
 
     private String title;
-    private String ISBN;
+    private String isbn;
 
     @ManyToOne
     @JoinColumn(name="author_id")
@@ -22,9 +22,9 @@ public class Book {
     
     public Book(){}
 
-    public Book(String title, String ISBN){
+    public Book(String title, String isbn){
         this.title=title;
-        this.ISBN=ISBN;
+        this.isbn=isbn;
     }
     
     public String getTitle(){
@@ -32,7 +32,7 @@ public class Book {
     }
 
     public String getIsbn(){
-        return ISBN;
+        return isbn;
     }
 
     public Author getAuthor(){
@@ -43,11 +43,19 @@ public class Book {
         this.title = title;
     }
 
-    public void setIsbn(String ISBN){
-        this.ISBN = ISBN;
+    public void setIsbn(String isbn){
+        this.isbn = isbn;
     }
 
     public void setAuthor(Author author){
         this.author = author;
+    }
+
+    public Long getID(){
+        return id;
+    }
+
+    public void setID(Long id){
+        this.id = id;
     }
 }

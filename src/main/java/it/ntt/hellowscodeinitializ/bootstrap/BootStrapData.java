@@ -22,10 +22,13 @@ public class BootStrapData implements CommandLineRunner{
     public void run(String ... args) throws Exception {
         Author author1 = new Author("Carlo", "Centofanti");
         Book book1 = new Book("Il mio primo libro", "123ABC");
+        Book book2 = new Book("Il mio secondo libro", "123ABD");
         book1.setAuthor(author1);
+        book2.setAuthor(author1);
 
         authorRepository.save(author1);
         bookRepository.save(book1);
+        bookRepository.save(book2);
 
 
 
